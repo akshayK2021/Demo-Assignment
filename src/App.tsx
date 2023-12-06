@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import FirstPage from './Pages/FIrstPage'
 import { Routes,Route } from 'react-router-dom'
@@ -11,14 +9,14 @@ function App() {
   
 
   return (
-    <>
+  
    <BrowserRouter>
       <Routes>
         <Route path="/" element={<FirstPage/>} />
         <Route path="/second-page" element={<SecondPage />} />
       </Routes>
     </BrowserRouter>
-    </>
+   
   )
 }
 

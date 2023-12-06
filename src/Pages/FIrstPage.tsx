@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState ,} from "react";
+import { NavLink } from "react-router-dom";
 import {
   Paper,
   Typography,
@@ -21,6 +22,7 @@ interface User {
 }
 
 const FirstPage = () => {
+  
   const navigate = useNavigate();
 
   const [user, setUser] = useState<User>({
@@ -36,28 +38,12 @@ const FirstPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!user.name || !user.phoneNumber || !user.email) {
-      setUser({
-        name: "",
-        phoneNumber: "",
-        email: "",
-      });
-      navigate("/");
-      alert("Please fill all the details before Submitting");
+
+    if (user.name && user.phoneNumber && user.email) {
+      localStorage.setItem('user', JSON.stringify(user));
+      navigate('/second-page');
     } else {
-    
-      // console.log('Submitted user data:', user);
-      const jsonString = JSON.stringify(user);
-
-      //saving file in local storage
-      localStorage.setItem("user", jsonString);
-      navigate("/second-page");
-
-      setUser({
-        name: "",
-        phoneNumber: "",
-        email: "",
-      });
+      alert('Please fill out the form before proceeding.');
     }
   };
 
@@ -98,7 +84,7 @@ const FirstPage = () => {
                 label="Phone Number"
                 fullWidth
                 name="phoneNumber"
-                type="number"
+                type="tel"
                 value={user.phoneNumber}
                 onChange={handleInputChange}
               />

@@ -45,7 +45,6 @@ const Table: React.FC = () => {
       <DataGrid
         rows={data}
         columns={columns}
-        pageSize={3}
         checkboxSelection
         disableRowSelectionOnClick
       />
