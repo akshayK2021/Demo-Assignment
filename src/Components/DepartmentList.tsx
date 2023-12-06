@@ -59,7 +59,7 @@ const DepartmentList: React.FC = () => {
         <Accordion key={department.department}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={department.department + 'panel'}>
             <Checkbox
-              checked={isDepartmentSelected(department.department) || areAllSubDepartmentsSelected(department)}
+              checked={(isDepartmentSelected(department.department) && areAllSubDepartmentsSelected(department)) || areAllSubDepartmentsSelected(department)}
               onChange={(event) => handleDepartmentSelection(department.department, event.target.checked)}
             />
             <Typography variant="body1">{department.department}</Typography>
