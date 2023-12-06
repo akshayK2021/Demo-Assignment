@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
+import { NetworkCell } from '@mui/icons-material';
 
 interface Post {
   userId: number;
@@ -23,8 +24,12 @@ const Table: React.FC = () => {
 
         const fetchedData: Post[] = await response.json();
         setData(fetchedData);
-      } catch (error) {
-        console.error('Error fetching data:', error.message);
+      } catch (error:unknown) {
+        if (error instanceof Error) {
+          console.error('Error fetching data:', error.message);
+        } else {
+          console.error('An unknown error occurred.');
+        }
       }
     };
 
