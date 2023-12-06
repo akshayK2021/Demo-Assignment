@@ -1,4 +1,4 @@
-import React from "react";
+
 import Table from "../Components/Table";
 import DepartmentList from "../Components/DepartmentList";
 import { Typography } from "@mui/material";
