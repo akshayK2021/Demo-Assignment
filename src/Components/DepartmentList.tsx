@@ -8,7 +8,7 @@ interface Department {
 }
 
 const DepartmentList: React.FC = () => {
-  const [departments, setDepartments] = useState<Department[]>([
+  const departments=[
     {
       department: 'customer_service',
       subDepartments: ['support', 'customer_success'],
@@ -17,7 +17,7 @@ const DepartmentList: React.FC = () => {
       department: 'design',
       subDepartments: ['graphic_design', 'product_design', 'web_design'],
     },
-  ]);
+  ];
 
   const [selectedDepartments, setSelectedDepartments] = useState<string[]>([]);
 
