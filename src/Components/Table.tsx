@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
-import { NetworkCell } from '@mui/icons-material';
+
 
 interface Post {
   userId: number;
