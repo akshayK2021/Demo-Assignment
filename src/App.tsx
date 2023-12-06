@@ -8,13 +8,13 @@ import { BrowserRouter } from 'react-router-dom'
 import SecondPage from './Pages/SecondPage'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<FirstPage />} />
+        <Route path="/" element={<FirstPage/>} />
         <Route path="/second-page" element={<SecondPage />} />
       </Routes>
     </BrowserRouter>
